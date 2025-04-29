@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Big Pic Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: #222;
+      overflow-x: hidden;
+    }
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.95);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    nav {
+      display: flex;
+      gap: 2rem;
+      transition: all 0.3s ease;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      position: relative;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -3px;
+      left: 0;
+      background-color: #333;
+      transition: width 0.3s ease;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    .hero {
+      margin-top: 80px;
+      height: 90vh;
+      background: url('https://picsum.photos/1920/1080') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: #333;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background: #fff;
+        width: 200px;
+        transform: translateX(100%);
+      }
+      nav.active {
+        transform: translateX(0);
+      }
+      .menu-toggle {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">BigPics</div>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+  <nav id="nav">
+    <a href="#">Home</a>
+    <a href="#">Gallery</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  Stunning Big Picture
+</div>
+
+<section>
+  <h2>Welcome</h2>
+  <p>This website is made with love and whooshy menus. Scroll down to see more big beautiful content!</p>
+</section>
+
+<section>
+  <h2>Gallery</h2>
+  <img src="https://picsum.photos/1200/600" alt="Gallery Image" style="width: 100%; margin-bottom: 2rem;">
+  <img src="https://picsum.photos/1200/601" alt="Gallery Image" style="width: 100%;">
+</section>
+
+<section>
+  <h2>Contact Us</h2>
+  <p>Say hello at <a href="mailto:hello@example.com">hello@example.com</a></p>
+</section>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('nav').classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>
